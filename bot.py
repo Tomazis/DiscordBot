@@ -45,11 +45,12 @@ bot = Bot(discord.Client())
 if not discord.opus.is_loaded():
     discord.opus.load_opus('opus')
 
+
+server_id = ''
+token = ''
+admin_role = ''
 q_file = "queue.dat"
 yt_url_pattern = re.compile("^http(s)?:/\/(?:www\.)?youtube.com\/watch\?(?=.*v=\w+)(?:\S+)?$")
-server_id = '224886395427094528'
-token = 'NDMxOTc0NDkzMDc0NzUxNDg4.DamjLA.UuoFMdsXMuS9qh45zIDms64r9jk'
-admin_role = 'nazi'
 remove_file(q_file)
 
 sd.default.device = 3  # change to desired device
