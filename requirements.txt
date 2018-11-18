@@ -1,0 +1,6 @@
+discord
+urllib
+asyncio
+youtube_dl
+numpy
+sounddevice
