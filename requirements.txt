@@ -3,3 +3,4 @@ youtube_dl
 numpy
 sounddevice
 PyNaCl
+twisted
