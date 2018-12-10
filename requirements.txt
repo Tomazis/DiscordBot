@@ -4,3 +4,4 @@ numpy
 sounddevice
 PyNaCl
 twisted
+pypiwin32

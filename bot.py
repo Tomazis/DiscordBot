@@ -34,9 +34,7 @@ class Bot:
     tcp_speak = False
     yt_speak = False
     curr_song = None
-    #music_data = collections.deque(maxlen=100)
     music_data = b''
-    # music_data = None
     socket_stream = None
     pcm_stream = None
     connected = []
@@ -82,7 +80,7 @@ ip_address = '127.0.0.1'
 port = 8888
 # remove_file(q_file)
 
-sd.default.device = 1  # change to desired device
+sd.default.device = 1  
 sd.default.channels = 2
 sd.default.dtype = 'int16'
 sd.default.latency = 'low'
@@ -334,7 +332,7 @@ async def print_help(bot_, channel):
 |@@ playlist                | Bot write youtube or file playlist in chat |
 |@@ clear                   | Clear playlist           |
 |@@ skip                    | Skip youtube track       | 
-|@@ volume [from 0 to 1]    | Change bot volume        |
+|@@ volume [from 0 to 100]    | Change bot volume        |
 |@@ purge [value]           | Delete [value] numbers of lines in chat |
 |@@ speak                   | Bot speak from line-in   |
 |@@ speak_tcp               | Bot speak from tcp       | 
@@ -436,7 +434,6 @@ class Stream:
             self.ready = False
         if not self.ready:
             if len(self.bot_.music_data) < 400000:
-                # if self.bot_.music_data is None:
                 return b'0' * 3840
             else:
                 self.ready = True
@@ -525,20 +522,11 @@ def check_events():
             asyncio.ensure_future(clear_playlist(bot, bot.client.get_channel(default_text_channel_id)))
 
 
-
-# @bot.client.event
+		
 async def background_loop():
     await bot.client.wait_until_ready()
     await bot.client.change_presence(game=discord.Game(name=''))
     tcp_commands.RunServer(bot, password, files, ip_address, port)
-    #asyncio.ensure_future(tcp_commands.start_twisted())
-    # while not bot.client.is_closed:
-    #     for Member in bot.client.get_all_members():
-    #         Roles = Member.roles
-    #         if len(list(filter(lambda x: x.name == 'DOG', Roles))) > 0:
-    #             if not bot.client.is_voice_connected(bot.client.get_server(server_id)):
-    #                 await bot.client.join_voice_channel(ch)
-    #             await bot.client.move_member(Member, ch)
     while not bot.client.is_closed:
         try:
             if bot.yt_speak:
