@@ -25,10 +25,10 @@ if args.git:
         version = 'v{:1.1f}'.format(float(last_version[1:]) + 0.1)
     else:
         version = last_version
-    with open('.\GUI\WindowsFormsApp1\Properties\AssemblyInfo.cs', 'r', encoding='cp932', errors='ignore') as file:
+    with open('.\GUI\WindowsFormsApp1\Properties\AssemblyInfo.cs', 'rb') as file:
         data = file.readlines()
-    data[-1] = '[assembly: AssemblyFileVersion("{}")]'.format(version[1:])
-    with open('.\GUI\WindowsFormsApp1\Properties\AssemblyInfo.cs', 'w', encoding='cp932', errors='ignore') as file:
+    data[-1] = b'[assembly: AssemblyFileVersion("' + version[1:].encode()+ b'")]'
+    with open('.\GUI\WindowsFormsApp1\Properties\AssemblyInfo.cs', 'wb') as file:
         file.writelines(data)
 
 if args.build:
