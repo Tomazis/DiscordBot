@@ -40,7 +40,7 @@ if args.build:
     command = ['build.bat']
     p = subprocess.Popen(command, stdout=subprocess.PIPE)
     p.communicate()
-    print('終わりました')
+    print('Build done')
 
 if args.git:
     add_cmd = ["git", "add", "."]
