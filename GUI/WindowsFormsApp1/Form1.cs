@@ -123,6 +123,8 @@ namespace WindowsFormsApp1
                 // logbox.AppendText($"{n}: {caps.ProductName}");
             }
             devicelist.SelectedIndex = 0;
+
+            version_label.Text = System.Windows.Forms.Application.ProductVersion;
         }
 
         private void sendcommandbutton_Click(object sender, EventArgs e)

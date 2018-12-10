@@ -9,6 +9,7 @@ C:\Users\agruh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Release\Window
 C:\Users\agruh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe
 C:\Users\agruh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.pdb
 C:\Users\agruh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form1.resources
+C:\Users\agruh\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe.config
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.pdb

@@ -51,6 +51,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.stream_label = new System.Windows.Forms.Label();
             this.file_label = new System.Windows.Forms.Label();
+            this.version_label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -264,11 +265,22 @@
             this.file_label.TabIndex = 23;
             this.file_label.Text = "File";
             // 
+            // version_label
+            // 
+            this.version_label.AutoSize = true;
+            this.version_label.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.version_label.Location = new System.Drawing.Point(422, 247);
+            this.version_label.Name = "version_label";
+            this.version_label.Size = new System.Drawing.Size(19, 12);
+            this.version_label.TabIndex = 24;
+            this.version_label.Text = "1.0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 261);
+            this.Controls.Add(this.version_label);
             this.Controls.Add(this.file_label);
             this.Controls.Add(this.stream_label);
             this.Controls.Add(this.filebutton);
@@ -324,6 +336,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label stream_label;
         private System.Windows.Forms.Label file_label;
+        private System.Windows.Forms.Label version_label;
     }
 }
 

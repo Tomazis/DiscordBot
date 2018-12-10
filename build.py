@@ -30,6 +30,11 @@ if args.git:
     data[-1] = b'[assembly: AssemblyFileVersion("' + version[1:].encode()+ b'")]'
     with open('.\GUI\WindowsFormsApp1\Properties\AssemblyInfo.cs', 'wb') as file:
         file.writelines(data)
+    with open('config.cfg', 'r') as file:
+        data = file.readlines()
+    data[-1] = 'VERSION={}'.format(version[1:])
+    with open('config.cfg', 'w') as file:
+        file.writelines(data)
 
 if args.build:
     command = ['build.bat']
