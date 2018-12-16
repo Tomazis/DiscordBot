@@ -43,6 +43,8 @@ class File(basic.LineReceiver,TimeoutMixin):
         self.bot = bot
         self.files = files
         self.state = 'READY'
+        self.size = ''
+        self.data_size = 0
 
     def connectionMade(self):
         print("Connection made")
@@ -66,7 +68,7 @@ class File(basic.LineReceiver,TimeoutMixin):
             print(message)
             self.transport.write('success'.encode('UTF-8'))
             print('Start Downloading...')
-            self.state = "DOWNLOADING"
+            self.state = "GETSIZE"
         else:
             print('exist')
             self.files.downloading_name = 'cache/files/' + message
@@ -74,28 +76,50 @@ class File(basic.LineReceiver,TimeoutMixin):
             self.transport.write('exist'.encode('UTF-8'))
 
     def handle_DOWNLOADING(self, data):
-        message = ""
-        if len(data) == 3:
-            try:
-                message = data.decode("UTF-8")
-                if message == 'end':
-                    self.files.is_downloading = False
-                    self.files.playlist.append(self.files.downloading_name)
-                    self.files.downloading_name = ''
-                    self.files.file.close()
-                    self.files.counter += 1
-                    self.state = "READY"
-                    self.transport.write('success'.encode('UTF-8'))
-                else:
-                    self.files.is_downloading = False
-                    self.files.file.close()
-                    os.remove(self.files.downloading_name)
-                    self.state = "READY"
-                    self.transport.write('error'.encode('UTF-8'))
-            except Exception as e:
-                print(e)
-        else:
-            self.files.file.write(data)
+        self.data_size += len(data)
+        self.files.file.write(data)
+        print(self.data_size, "   ", self.size)
+        if str(self.data_size) == self.size:
+            self.files.is_downloading = False
+            self.files.playlist.append(self.files.downloading_name)
+            self.files.downloading_name = ''
+            self.files.file.close()
+            self.files.counter += 1
+            self.state = "READY"
+            self.transport.write('success'.encode('UTF-8'))
+        # message = ""
+        # if len(data) == 3:
+        #     try:
+        #         message = data.decode("UTF-8")
+        #         if message == 'end':
+        #             self.files.is_downloading = False
+        #             self.files.playlist.append(self.files.downloading_name)
+        #             self.files.downloading_name = ''
+        #             self.files.file.close()
+        #             self.files.counter += 1
+        #             self.state = "READY"
+        #             self.transport.write('success'.encode('UTF-8'))
+        #         else:
+        #             self.files.is_downloading = False
+        #             self.files.file.close()
+        #             os.remove(self.files.downloading_name)
+        #             self.state = "READY"
+        #             self.transport.write('error'.encode('UTF-8'))
+        #     except Exception as e:
+        #         print(e)
+        # else:
+        #     self.files.file.write(data)
+
+    def handle_GETSIZE(self, data):
+        message = ''
+        try:
+            message = data.decode("UTF-8")
+            self.size = message
+            self.state = "DOWNLOADING"
+            self.data_size = 0
+            self.transport.write('success'.encode('UTF-8'))
+        except Exception as e:
+            print(e)
 
     def dataReceived(self, data):
         self.resetTimeout()
@@ -104,6 +128,8 @@ class File(basic.LineReceiver,TimeoutMixin):
             self.handle_READY(data)
         elif self.state == "DOWNLOADING":
             self.handle_DOWNLOADING(data)
+        elif self.state == "GETSIZE":
+            self.handle_GETSIZE(data)
 
 
 class FileFactory(protocol.ServerFactory):

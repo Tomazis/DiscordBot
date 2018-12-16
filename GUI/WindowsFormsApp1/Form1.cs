@@ -260,6 +260,8 @@ namespace WindowsFormsApp1
                     logbox.AppendText("File Exist!\n", Color.Red);
                     return;
                 }
+                answer = SendText(Convert.ToString(TotalLength), stm);
+                
                 for (int i = 0; i < NoOfPackets; i++)
                 {
                     if (TotalLength > bufferSize)
@@ -278,7 +280,12 @@ namespace WindowsFormsApp1
                 }
 
                 Fs.Close();
-                answer = SendText("end", stm);
+                byte[] bb = new byte[100];
+                int k = stm.Read(bb, 0, 100);
+                logbox.AppendText("Start File Transfer\n");
+                answer = "";
+                for (int i = 0; i < k; i++)
+                    answer += Convert.ToChar(bb[i]);
                 if (answer != "success")
                 {
                     logbox.AppendText("Error!\n", Color.Red);
