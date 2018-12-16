@@ -21,3 +21,14 @@ C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsF
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.GenerateResource.Cache
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe
 C:\Users\agruh\Git_Projects\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.pdb
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe.config
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\bin\Release\WindowsFormsApp1.pdb
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\bin\Release\NAudio.dll
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\bin\Release\NAudio.xml
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form1.resources
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe
+C:\Users\agruh\git_source\DiscordBot\GUI\WindowsFormsApp1\obj\Release\WindowsFormsApp1.pdb
