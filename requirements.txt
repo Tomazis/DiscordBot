@@ -1,7 +1,8 @@
-discord
-youtube_dl
-numpy
-sounddevice
-PyNaCl
-twisted
-pypiwin32
+ffmpeg, Python 3.6 and pip modules:
+1. discord
+2. youtube_dl
+3. numpy
+4. sounddevice
+5. PyNaCl
+6. twisted
+7. pypiwin32 (only for Windows)
