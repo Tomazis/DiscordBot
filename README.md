@@ -1,7 +1,7 @@
 # Taiga Discord Bot
-Multifunctional Discord Bot.
+ *Multifunctional Discord Bot.* 
 
-#### What TaigaBot can do?
+### What TaigaBot can do?
 * Download and play YouTube music videos
 * Play audio files (*.mp3)
 * Stream audio directly from source (e.g. microphone, stereo mixer, line-in, [Virtual Cable](https://www.vb-audio.com/Cable/index.htm))
